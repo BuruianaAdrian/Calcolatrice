@@ -6,6 +6,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
+import model.Espressione;
+import model.EspressioneException;
+import model.Frazione;
 
 
 public class HelloController {
@@ -77,4 +80,17 @@ public class HelloController {
             display.setText(text.substring(0, text.length() - 1));
         }
     }
+
+    private void uguale{
+        String input = display.getText();
+        try {
+            Frazione risultato = Espressione.risolvi(input);
+            display.setText(risultato.toString());
+        } catch (EspressioneException ex) {
+            display.setText("Errore sintattico");
+        } catch (ArithmeticException ex) {
+            display.setText("Errore aritmetico");
+        }
+    }
+
 }

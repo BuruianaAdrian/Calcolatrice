@@ -27,7 +27,7 @@
             <Button fx:id="btn5" mnemonicParsing="false" onAction="#numeri" text="5" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
             <Button fx:id="btn2" mnemonicParsing="false" onAction="#numeri" text="2" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             <Button fx:id="btnDel" mnemonicParsing="false" onAction="#del" text="Del" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button fx:id="btnEnter" mnemonicParsing="false" text="Enter" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="btnEnter" mnemonicParsing="false" onAction="#uguale" text="Enter" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
             <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#operatori" text="+" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             <Button fx:id="btnClear" mnemonicParsing="false" onAction="#clear" text="C" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
             <Button fx:id="btnPow" mnemonicParsing="false" text="^" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />

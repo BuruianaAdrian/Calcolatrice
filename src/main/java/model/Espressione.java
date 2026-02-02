@@ -179,9 +179,13 @@ public class Espressione {
                 case 0:
                     /*-- stato 0 ----- in attesa di espressione -------------------------------*/
                     if (token instanceof Operatore) {
-                        //TODO
+                        throw new EspressioneException("Espressione non valida ", token + " un operatore non può essere il primo elemento.");
                     } else if (token instanceof Parentesi) {
-                        //TODO
+                        if(token == Parentesi.PARENTESI_APERTA){
+                            validTokensList.add(token);
+                        }else{
+                            throw new EspressioneException("Espressione non valida ", token + "Non puoi iniziare con una parentesi chiusa.");
+                        }
                     } else if (token instanceof Frazione) {
                         validTokensList.add(token);
                         stato = 2;
@@ -198,7 +202,11 @@ public class Espressione {
                         validTokensList.add(token);
                         stato = 2;
                     } else if (token instanceof Parentesi) {
-                        //TODO
+                        if(token == Parentesi.PARENTESI_APERTA){
+                            validTokensList.add(token);
+                        }else{
+                            throw new EspressioneException("Espressione non valida ", token + "Non puoi mettere una parentesi chiusa.");
+                        }
                     }
                     break;
                 case 2:
@@ -211,7 +219,12 @@ public class Espressione {
                                 "Espressione non valida",
                                 token + " non può seguire un operando");
                     } else if (token instanceof Parentesi) {
-                        //TODO
+                        if(token == Parentesi.PARENTESI_CHIUSA){
+                            validTokensList.add(token);
+                        }else{
+                            throw new EspressioneException("Espressione non valida ", token + "Non puoi iniziare mettere una parentesi aperta.");
+                        }
+                        stato = 3;
                     }
                     break;
                 case 3:
@@ -224,7 +237,9 @@ public class Espressione {
                                 "Espressione non valida",
                                 token + " non può seguire una parentesi chiusa");
                     } else if (token instanceof Parentesi) {
-                        //TODO
+                        if(token == Parentesi.PARENTESI_CHIUSA){
+                            validTokensList.add(token);
+                        }
                     }
             }
         }

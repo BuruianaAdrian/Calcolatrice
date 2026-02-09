@@ -17,6 +17,7 @@ public class Espressione {
         validTokensList = new ArrayList();
         rpnExpression = new ArrayList();
     }
+
     public ArrayList getTokensExpr() {
         return tokensExpr;
     }

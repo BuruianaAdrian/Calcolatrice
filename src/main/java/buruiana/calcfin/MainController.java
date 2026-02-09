@@ -6,6 +6,7 @@ import buruiana.calcfin.model.Frazione;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class MainController {
@@ -47,17 +48,21 @@ public class MainController {
     public Button btnDel;
     @FXML
     public Button btnEnter;
+    @FXML
+    public Label exception;
 
     @FXML
     public void numeri(ActionEvent event){
         Button bottone = (Button) event.getSource();
         String testo = bottone.getText();
+        exception.setText("");
         display.setText(display.getText() + testo);
     }
     @FXML
     public void operatori(ActionEvent event){
         Button bottone = (Button) event.getSource();
         String testo = bottone.getText();
+        exception.setText("");
         display.setText(display.getText() + testo);
     }
 //    Scene.processKeyEvent(KeyEvent e){
@@ -68,6 +73,7 @@ public class MainController {
     @FXML
     public void clear(){
         display.setText("");
+        exception.setText("");
     }
 
     @FXML
@@ -76,6 +82,7 @@ public class MainController {
         if (!text.isEmpty()) {
             display.setText(text.substring(0, text.length() - 1));
         }
+        exception.setText("");
     }
 
     @FXML
@@ -93,9 +100,9 @@ public class MainController {
 //            ex.toRPN();
 //            System.out.println(ex.getRpnExpression());
         } catch (EspressioneException ex) {
-            display.setText("Errore sintattico");
+            exception.setText("Errore sintattico");
         } catch (ArithmeticException ex) {
-            display.setText("Errore aritmetico");
+            exception.setText("Errore aritmetico");
         }
     }
 

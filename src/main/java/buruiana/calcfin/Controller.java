@@ -92,13 +92,6 @@ public class Controller {
             Frazione risultato = Espressione.risolvi(input);
             System.out.println(risultato);
             display.setText(risultato.toString());
-//            Espressione ex = new Espressione(input);
-//            ex.scanner();
-//            System.out.println(ex.getTokensExpr());
-//            ex.parser();
-//            System.out.println(ex.getValidTokensList());
-//            ex.toRPN();
-//            System.out.println(ex.getRpnExpression());
         } catch (EspressioneException ex) {
             exception.setText(ex.getDetailedMessage());
         } catch (ArithmeticException ex) {

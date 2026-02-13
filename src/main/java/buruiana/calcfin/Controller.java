@@ -9,7 +9,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class MainController {
+public class Controller {
     @FXML
     public TextField display;
     @FXML
@@ -100,9 +100,9 @@ public class MainController {
 //            ex.toRPN();
 //            System.out.println(ex.getRpnExpression());
         } catch (EspressioneException ex) {
-            exception.setText("Errore sintattico");
+            exception.setText(ex.getDetailedMessage());
         } catch (ArithmeticException ex) {
-            exception.setText("Errore aritmetico");
+            exception.setText(ex.getMessage());
         }
     }
 

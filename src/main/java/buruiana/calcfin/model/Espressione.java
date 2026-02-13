@@ -227,7 +227,7 @@ public class Espressione {
                         if(token == Parentesi.PARENTESI_CHIUSA){
                             validTokensList.add(token);
                         }else{
-                            throw new EspressioneException("Espressione non valida ", token + "Non puoi iniziare mettere una parentesi aperta.");
+                            throw new EspressioneException("Espressione non valida ", token + "Non puoi iniziare con una parentesi aperta.");
                         }
                         stato = 3;
                     }
@@ -252,7 +252,7 @@ public class Espressione {
         if (stato == 1)
             throw new EspressioneException(
                     "Espressione non valida",
-                    "L'espressione termina non può terminare con " + tokensExpr.getLast());
+                    "L'espressione non può terminare con " + tokensExpr.getLast());
     }
     public void calcRPN() {
         Frazione operando1, operando2, risultatoParziale = null;

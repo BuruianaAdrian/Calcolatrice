@@ -5,4 +5,6 @@ module buruiana.calcfin {
 
     opens buruiana.calcfin to javafx.fxml;
     exports buruiana.calcfin;
+    exports buruiana.calcfin.controller;
+    opens buruiana.calcfin.controller to javafx.fxml;
 }

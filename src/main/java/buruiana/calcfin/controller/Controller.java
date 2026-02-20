@@ -1,4 +1,4 @@
-package buruiana.calcfin;
+package buruiana.calcfin.controller;
 
 import buruiana.calcfin.model.Espressione;
 import buruiana.calcfin.model.EspressioneException;
@@ -50,9 +50,14 @@ public class Controller {
     public Button btnEnter;
     @FXML
     public Label exception;
-
+    //variabile per cancellare il risultato
+    boolean x;
     @FXML
     public void numeri(ActionEvent event){
+        if(x) {
+            x = false;
+            display.setText("");
+        }
         Button bottone = (Button) event.getSource();
         String testo = bottone.getText();
         exception.setText("");
@@ -60,15 +65,12 @@ public class Controller {
     }
     @FXML
     public void operatori(ActionEvent event){
+        x = false;
         Button bottone = (Button) event.getSource();
         String testo = bottone.getText();
         exception.setText("");
         display.setText(display.getText() + testo);
     }
-//    Scene.processKeyEvent(KeyEvent e){
-//        String keyText = e.getText();
-//        display.setText(display.getText() + keyText);
-//    }
 
     @FXML
     public void clear(){
@@ -87,6 +89,7 @@ public class Controller {
 
     @FXML
     private void uguale(){
+        x = true;
         String input = display.getText();
         try {
             Frazione risultato = Espressione.risolvi(input);
